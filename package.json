@@ -1,0 +1,26 @@
+{
+  "name": "sandbox_firebase",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elifTech/sandbox_firebase.git"
+  },
+  "author": "Vitalii Savchuk <esvit666@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/elifTech/sandbox_firebase/issues"
+  },
+  "homepage": "https://github.com/elifTech/sandbox_firebase#readme",
+  "dependencies": {
+    "angular": "^1.6.2",
+    "angularfire": "^2.3.0"
+  },
+  "devDependencies": {
+    "webpack": "^2.2.1"
+  }
+}
