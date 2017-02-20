@@ -1,27 +1,34 @@
+import ngFirebase from 'angularfire';
 import uiRouter from 'angular-ui-router';
+import models from '../../models';
+import {AuthService} from './AuthService.service';
+import {LoginFormCtrl} from './LoginFormCtrl.controller';
+import loginPageTemplate from './loginForm.html';
+import './loginForm.scss';
 
-const appName = 'component.auth';
-export default appName;
+const moduleName = 'component.auth';
+export default moduleName;
+export {AuthService};
 
-const app = angular.module(appName, [
+angular.module(moduleName, [
+  models,
+  ngFirebase,
   uiRouter
-]);
+])
+
+  .config(config)
+  .service(AuthService.$name, AuthService)
+  .controller(LoginFormCtrl.$name, LoginFormCtrl)
+;
 
 
-app.config(config);
-
-
+config.$inject = ['$stateProvider'];
 function config($stateProvider) {
-  $stateProvider.state({
-    name: 'home',
-    url: '/',
-    template: 'Home'
-  });
   $stateProvider.state({
     name: 'signin',
     url: '/signin',
-    template: template,
-    controller: 'LoginFormCtrl',
+    template: loginPageTemplate,
+    controller: LoginFormCtrl.$name,
     controllerAs: 'vm'
   });
 }

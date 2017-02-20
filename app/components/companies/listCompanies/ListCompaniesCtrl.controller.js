@@ -1,24 +1,15 @@
-export {EditCompanyCtrl};
+export {ListCompaniesCtrl};
 
-EditCompanyCtrl.$name = 'EditCompanyCtrl';
-EditCompanyCtrl.$inject = ['$scope', 'company', 'CompanyModel'];
-function EditCompanyCtrl($scope, company, CompanyModel) {
+ListCompaniesCtrl.$name = 'ListCompaniesCtrl';
+ListCompaniesCtrl.$inject = ['$scope', 'CompanyModel', 'AuthService', '$firebaseArray'];
+function ListCompaniesCtrl($scope, CompanyModel, AuthService, $firebaseArray) {
   const vm = this;
 
-  var comp = CompanyModel.create();
-  comp.$bindTo($scope, 'item');
+  $scope.listOptions = {
+    sort: 'timestamp'
+  };
 
-  console.info(comp);
+  let ref = CompanyModel.getList($scope.listOptions);
 
-  vm.saveItem = saveItem;
-
-  function saveItem(item) {
-    console.info(item);
-
-    item.$save().then(function() {
-      console.info('Profile saved!');
-    }).catch(function(error) {
-      console.info('Error!');
-    });
-  }
+  vm.companies = $firebaseArray(ref);
 }

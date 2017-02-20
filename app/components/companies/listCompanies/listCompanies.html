@@ -1,8 +1,114 @@
-<form ng-submit="vm.saveItem(item)">
+<div class="list-settings">
+    <div class="panel" ng-class="{'hide-panel': globalVm.$state.includes('companies.edit'), 'show-panel': globalVm.$state.includes('companies.new')}">
+        <div class="panel-body">
+            <div class="btn-group">
+                <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    esvit666@gmail.com
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Edit your profile</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Separated link</a>
+                </div>
+            </div>
+
+            <ul class="list-group list-group-flush">
+                <a href="" class="list-group-item">Edit your profile</a>
+
+                <div class="list-group-header">Manage</div>
+                <a href="" class="list-group-item" ui-sref-active="active" ui-sref="companies.new">Your companies</a>
+
+                <div class="list-group-header">Template</div>
+                <a href="" class="list-group-item" ui-sref-active="active" ui-sref="companies.edit">Sections</a>
+                <a href="" class="list-group-item" ui-sref-active="active">Skins</a>
+            </ul>
+        </div>
+    </div>
+    <div class="panel" ng-class="{'show-panel': globalVm.$state.includes('companies.edit'), 'hide-panel': globalVm.$state.includes('companies.new')}">
+        <div class="panel-body">
+
+            <div class="line-container">
+                <span class="badge list-return-badge">
+                    &gt;
+                </span>
+                <a href="" ui-sref="companies"></a>
+            </div>
+
+            <div class="btn-group">
+                <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Company CEGEMA
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Separated link</a>
+                </div>
+            </div>
+
+        <div class="list-group list-group-flush">
+            <a href="" class="list-group-item"><span class="fa fa-pencil"></span>&nbsp;
+                Edit company</a>
+
+            <div class="list-group-header">Data</div>
+            <a href="" class="list-group-item"><span class="fa fa-files-o"></span>&nbsp;
+                Files</a>
+            <a href="" class="list-group-item">Categories</a>
+            <a href="" class="list-group-item">Products</a>
+            <a href="" class="list-group-item">Import</a>
+            <a href="" class="list-group-item">Filled forms</a>
+
+            <div class="list-group-header">Manage</div>
+            <a href="" class="list-group-item">Forms</a>
+            <a href="" class="list-group-item">Domains</a>
 
 
-    <input type="text" ng-model="item.title" />
+            <!--a ng-repeat="company in vm.companies"
+               href="" ui-sref="companies.edit({ id: company.$id })" ui-sref-active="active"
+               class="list-group-item">
+                {{company.title}}
+            </a-->
+        </div>
+        </div>
+    </div>
+    <div class="panel" ng-class="{'hide-panel': globalVm.$state.includes('companies.edit') || globalVm.$state.includes('companies.new')}">
+        <div class="panel-body">
 
+            <div class="line-container">
+                <span class="badge list-return-badge">
+                    &gt;
+                </span>
+                <a href="" ui-sref="companies"></a>
+            </div>
 
-    <button type="submit">Save</button>
-</form>
+            <div class="btn-group">
+                <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Cegema.de
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Separated link</a>
+                </div>
+            </div>
+
+        <ul class="list-group list-group-flush">
+            <a href="" class="list-group-item">
+                <span class="fa fa-pencil"></span>&nbsp;
+                Edit domain</a>
+
+            <div class="list-group-header">Manage</div>
+            <a href="" class="list-group-item">Pages</a>
+            <a href="" class="list-group-item">Widgets</a>
+            <a href="" class="list-group-item">Menu</a>
+            <a href="" class="list-group-item">Configurations</a>
+        </ul>
+    </div>
+    </div>
+    <div class="content-panel" ng-class="{'show-content': globalVm.$state.includes('companies.edit') || globalVm.$state.includes('companies.new')}" ui-view></div>
+</div>

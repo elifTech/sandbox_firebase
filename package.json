@@ -1,26 +1,43 @@
 {
   "name": "sandbox_firebase",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "version": "0.0.1",
+  "description": "Firebase's sandbox",
+  "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "deploy": "npm run build:prod && firebase deploy",
+    "start": "webpack-dev-server --env=dev --content-base public/",
+    "build:dev": "webpack --env=dev --progress --profile --colors",
+    "build:prod": "webpack --env=prod --progress --profile --colors"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/elifTech/sandbox_firebase.git"
-  },
+  "repository": "git+https://github.com/elifTech/sandbox_firebase.git",
   "author": "Vitalii Savchuk <esvit666@gmail.com>",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/elifTech/sandbox_firebase/issues"
   },
   "homepage": "https://github.com/elifTech/sandbox_firebase#readme",
   "dependencies": {
     "angular": "^1.6.2",
-    "angularfire": "^2.3.0"
+    "angular-ui-router": "^0.4.2",
+    "angularfire": "^2.3.0",
+    "bootstrap": "^4.0.0-alpha.6",
+    "font-awesome": "^4.7.0"
   },
   "devDependencies": {
-    "webpack": "^2.2.1"
+    "babel-core": "^6.23.1",
+    "babel-loader": "^6.3.2",
+    "babel-preset-es2015": "^6.22.0",
+    "css-loader": "^0.26.1",
+    "extract-text-webpack-plugin": "^2.0.0-rc.3",
+    "file-loader": "^0.10.0",
+    "html-webpack-plugin": "^2.28.0",
+    "ng-cache-loader": "0.0.23",
+    "node-sass": "^4.5.0",
+    "sass-loader": "^6.0.1",
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.3.0",
+    "webpack-merge": "^2.6.1"
   }
 }

@@ -1,5 +1,10 @@
-LoginFormCtrl
-function LoginFormCtrl($scope, $firebaseAuth, AuthService) {
+import {AuthService} from './AuthService.service';
+
+export {LoginFormCtrl};
+
+LoginFormCtrl.$name = 'LoginFormCtrl';
+LoginFormCtrl.$inject = ['$firebaseAuth', AuthService.$name];
+function LoginFormCtrl($firebaseAuth, AuthService) {
   const vm = this;
 
   vm.user = {
