@@ -1,9 +1,9 @@
-export {CompanyModel};
+export {PageModel};
 
-CompanyModel.$name = 'CompanyModel';
-CompanyModel.$inject = ['$firebaseObject', '$firebaseArray'];
-function CompanyModel($firebaseObject, $firebaseArray) {
-  const ref = firebase.database().ref('companies');
+PageModel.$name = 'PageModel';
+PageModel.$inject = ['$firebaseObject', '$firebaseArray'];
+function PageModel($firebaseObject, $firebaseArray) {
+  const ref = firebase.database().ref('pages');
 
   return {
     create,
@@ -12,7 +12,7 @@ function CompanyModel($firebaseObject, $firebaseArray) {
   };
 
   function create() {
-    return $firebaseObject(ref.push({}));
+    return $firebaseObject(ref.push({sections: []}));
   }
 
   function getById(uid) {

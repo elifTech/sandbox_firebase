@@ -1,0 +1,103 @@
+$panelMinWidth: 300px;
+$panelMargin: 70px;
+
+.list-settings {
+  margin-right: $panelMargin;
+}
+
+.panel.hide-panel {
+  width: 0;
+  opacity: 0;
+  overflow: hidden;
+  -moz-transition: opacity .25s ease-out,width .45s ease-in-out;
+  -o-transition: opacity .25s ease-out,width .45s ease-in-out;
+  -webkit-transition: opacity .25s ease-out,width .45s ease-in-out;
+  transition: opacity .25s ease-out,width .45s ease-in-out;
+}
+.panel {
+  float: left;
+  background: #fff;
+  margin: 10px 0 0 0;
+  position: relative;
+  width: 33%;
+  -moz-transition: opacity .25s ease-out .25s,width .45s ease-in-out;
+  -o-transition: opacity .25s ease-out .25s,width .45s ease-in-out;
+  -webkit-transition: opacity .25s ease-out .25s,width .45s ease-in-out;
+  transition: opacity .25s ease-out .25s,width .45s ease-in-out;
+  opacity: 1;
+}
+.panel .panel-body {
+  min-width: $panelMinWidth;
+  margin-left: $panelMargin;
+  position: relative;
+
+  .btn-group {
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 20px;
+
+    & > .btn {
+      width: 100%;
+    }
+  }
+}
+.panel.show-panel {
+  min-width: $panelMinWidth + $panelMargin;
+  width: 1%;
+}
+.content-panel.show-content {
+  opacity: 1;
+  -moz-transition: opacity .25s ease-out,width .45s ease-in-out;
+  -o-transition: opacity .25s ease-out,width .45s ease-in-out;
+  -webkit-transition: opacity .25s ease-out,width .45s ease-in-out;
+  transition: opacity .25s ease-out,width .45s ease-in-out;
+  z-index: 1;
+}
+.content-panel {
+  -moz-transition: opacity .25s ease-out .25s,width .45s ease-in-out;
+  -o-transition: opacity .25s ease-out .25s,width .45s ease-in-out;
+  -webkit-transition: opacity .25s ease-out .25s,width .45s ease-in-out;
+  transition: opacity .25s ease-out .25s,width .45s ease-in-out;
+
+  border-left: 1px solid #ddd;
+  margin: 0 0 0 $panelMinWidth + $panelMargin;
+  padding: 20px 0 20px 20px;
+  opacity: 0;
+  z-index: -1;
+  position: relative;
+}
+
+.line-container {
+  border-right: 1px solid #ccc;
+  height: 600px;
+  left: -$panelMargin;
+  margin-left: 17px;
+  opacity: 1;
+  position: absolute;
+  top: 0;
+  width: 18px;
+  background: #fff;
+}
+.list-return-badge {
+  position: absolute;
+  top: 16px;
+  left: 6px;
+  width: 24px;
+  height: 24px;
+  line-height: 16px;
+  text-align: center;
+
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 50%;
+  color: #292b2c;
+  background-color: #fff;
+  border-color: #ccc;
+}
+
+.list-group-header {
+  color: #666;
+  padding: 25px 20px 5px;
+  text-transform: uppercase;
+  font-size: 12px;
+}

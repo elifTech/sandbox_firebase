@@ -12,4 +12,5 @@ function ListCompaniesCtrl($scope, CompanyModel, AuthService, $firebaseArray) {
   let ref = CompanyModel.getList($scope.listOptions);
 
   vm.companies = $firebaseArray(ref);
+  console.log('---companies', vm.companies);
 }

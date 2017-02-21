@@ -1,5 +1,5 @@
 <div class="list-settings">
-    <div class="panel" ng-class="{'hide-panel': globalVm.$state.includes('companies.edit'), 'show-panel': globalVm.$state.includes('companies.new')}">
+    <div class="panel" ng-class="{'hide-panel': globalVm.$state.includes('pages.edit') || globalVm.$state.includes('pages.show'), 'show-panel': globalVm.$state.includes('pages.new')}">
         <div class="panel-body">
             <div class="btn-group">
                 <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -26,7 +26,7 @@
             </ul>
         </div>
     </div>
-    <div class="panel" ng-class="{'show-panel': globalVm.$state.includes('companies.edit'), 'hide-panel': globalVm.$state.includes('companies.new')}">
+    <div class="panel" ng-class="{'show-panel': globalVm.$state.includes('pages.edit') || globalVm.$state.includes('pages.show'), 'hide-panel': globalVm.$state.includes('pages.new')}">
         <div class="panel-body">
 
             <div class="line-container">
@@ -66,15 +66,15 @@
             <a href="" class="list-group-item">Domains</a>
 
             <hr />
-            <a ng-repeat="company in vm.companies"
-               href="" ui-sref="companies.edit({ id: company.$id })" ui-sref-active="active"
+            <a ng-repeat="page in vm.pages"
+               href="" ui-sref="pages.edit({ id: page.$id })" ui-sref-active="active"
                class="list-group-item">
-                {{company.title}}
+                {{page.title}}
             </a>
         </div>
         </div>
     </div>
-    <div class="panel" ng-class="{'hide-panel': globalVm.$state.includes('companies.edit') || globalVm.$state.includes('companies.new')}">
+    <div class="panel" ng-class="{'hide-panel': globalVm.$state.includes('pages.edit') || globalVm.$state.includes('pages.new') || globalVm.$state.includes('pages.show')}">
         <div class="panel-body">
 
             <div class="line-container">
@@ -103,12 +103,12 @@
                 Edit domain</a>
 
             <div class="list-group-header">Manage</div>
-            <a href="" class="list-group-item" ui-sref="pages">Pages</a>
+            <a href="" class="list-group-item" ui-sref="pages.new">Pages</a>
             <a href="" class="list-group-item">Widgets</a>
             <a href="" class="list-group-item">Menu</a>
             <a href="" class="list-group-item">Configurations</a>
         </ul>
     </div>
     </div>
-    <div class="content-panel" ng-class="{'show-content': globalVm.$state.includes('companies.edit') || globalVm.$state.includes('companies.new')}" ui-view></div>
+    <div class="content-panel" ng-class="{'show-content': globalVm.$state.includes('pages.edit') || globalVm.$state.includes('pages.new') || globalVm.$state.includes('pages.show')}" ui-view></div>
 </div>

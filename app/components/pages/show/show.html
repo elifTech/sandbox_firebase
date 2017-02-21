@@ -1,0 +1,14 @@
+<h1>
+    {{item.title}}
+</h1>
+
+<br />
+
+<div ng-repeat="section in item.sections" style="background: #ccc; margin: 10px 0; padding: 10px">
+    <div>
+        <h2>{{section.title}}</h2>
+        <div>
+            {{section.text}}
+        </div>
+    </div>
+</div>

@@ -9,12 +9,14 @@ import models from './models';
 import auth from './components/auth';
 import home from './components/home';
 import companies from './components/companies';
+import pages from './components/pages';
 
 angular.module('app', [
   models,
   auth,
   home,
-  companies
+  companies,
+  pages
 ])
   .controller(GlobalCtrl.$name, GlobalCtrl)
 ;
